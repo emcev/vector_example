@@ -107,7 +107,7 @@ void vector_t::push_back(int value) {
 	}
 
 	size_++;
-	elements_[size_--] = value;
+	elements_[size_-1] = value;
 
 }
 
