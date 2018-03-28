@@ -116,14 +116,14 @@ void vector_t::pop_back() {
 	if (size_ == 0) {
 		return;
 	}
-	else {
+	if(size_==1) {
 		capacity_ = 1; 
 		size_ = 0; 
 		return; 
 	}
 
 	size_--;
-	if (capacity_ == (4 * size_)) {
+	if (capacity_ >= (4 * size_)) {
 		int *clone = new int[capacity_ / 2];
 		capacity_ /= 2;
 		for (int i = 0; i < size_; i++) {
