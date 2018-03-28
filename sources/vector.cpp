@@ -44,18 +44,16 @@ vector_t & vector_t::operator = (vector_t const & other) {
 
 bool vector_t::operator == (vector_t const & other) const {
 
-	if (size_ == other.size())
-		if (size_ != 0)
-		{
-			for (int i = 0; i < size_; i++) {
-				if (elements_[i] != other.elements_[i]) {
-					return false;
-				}
+	bool check = false;
+	if (size_ == other.size_) {
+		for (int i = 0; i < size_; i++) {
+			if (elements_[i] != other.elements_[i]) {
+				return false;
 			}
 		}
-		else return true;
-
-		return false;
+		check = true;
+	}
+	return check;
 
 }
 
