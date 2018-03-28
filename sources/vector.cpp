@@ -48,7 +48,7 @@ bool vector_t::operator == (vector_t const & other) const {
 		if (size_ != 0)
 		{
 			for (int i = 0; i < size_; i++) {
-				if (elements_[i] != other.elements[i]) {
+				if (elements_[i] != other.elements_[i]) {
 					return false;
 				}
 			}
@@ -126,15 +126,15 @@ void vector_t::pop_back() {
 
 	size_--;
 	if (capacity_ == (4 * size_)) {
-		int *clone = new int[0.5 * capacity_];
-		capacity_ *= 0.5;
+		int *clone = new int[capacity_ / 2];
+		capacity_ /= 2;
 		for (int i = 0; i < size_; i++) {
 			clone[i] = elements_[i];
 		}
 		delete[] elements_;
 		elements_ = new int[capacity_];
 		for (int i = 0; i < size_; i++) {
-			elements_[i] = elements_copy[i];
+			elements_[i] = clone[i];
 		}
 		delete[] clone;
 		return;
