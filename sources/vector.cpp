@@ -14,7 +14,7 @@ vector_t::vector_t() {
 
 vector_t::vector_t(vector_t const & other) {
 
-	return *this;
+	//return *this;
 	capacity_ = other.capacity();
 	size_ = other.size();
 	elements_ = new int[capacity_];
