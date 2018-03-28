@@ -27,7 +27,7 @@ vector_t::vector_t(vector_t const & other) {
 vector_t & vector_t::operator = (vector_t const & other) {
 	
 	delete[] elements_;
-	if (this->elements_ == other.elements_) {
+	if (*this == other) {
 		return *this;
 	}
 	else {
