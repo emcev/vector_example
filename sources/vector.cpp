@@ -88,7 +88,7 @@ void vector_t::push_back(int value) {
 				clone[i] = elements_[i];
 			}
 			size_++;
-			clone[size_--] = value;
+			clone[size_ - 1] = value;
 			delete[] elements_;
 			elements_ = new int[capacity_];
 			for (int i = 0; i < size_; i++) {
