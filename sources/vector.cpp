@@ -161,5 +161,4 @@ bool operator !=(vector_t const & lhs, vector_t const & rhs) {
 		if (lhs[i] != rhs[i]) return true;
 	}
 	return false;
-
 }
